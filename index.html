@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbie Comfort · Your Gentle Sanctuary</title>
+  
+  <!-- Google Fonts for elegant typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for cute icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Decorative floating elements -->
+  <div class="floating-heart">🌸</div>
+  <div class="floating-heart" style="top: 80%; left: 90%;">💕</div>
+  <div class="floating-heart" style="top: 20%; left: 85%;">✨</div>
+  <div class="floating-heart" style="top: 70%; left: 10%;">🌷</div>
+  <div class="floating-heart" style="top: 30%; left: 5%;">🤍</div>
+
+  <div class="main-container">
+    <!-- HEADER SECTION -->
+    <header class="header">
+      <h1>
+        <i class="fas fa-ribbon"></i>
+        Barbie Comfort
+        <i class="fas fa-heart"></i>
+      </h1>
+      <div class="subtitle">your gentle sanctuary</div>
+    </header>
+
+    <!-- MAIN DASHBOARD -->
+    <div class="dashboard">
+      
+      <!-- CHAT CARD (Left Column) -->
+      <div class="card chat-card">
+        <h2>
+          <i class="fas fa-comment-dots"></i>
+          supportive chat
+        </h2>
+        
+        <div class="chat-messages" id="chatMessages">
+          <div class="message bot-msg">
+            <i class="fas fa-robot" style="margin-right: 8px;"></i>
+            Hi sweet one. I'm here for you - truly here. This is a safe space where you can share anything, feel anything, be anything. How are you doing today? 💕
+          </div>
+        </div>
+        
+        <div class="chat-input-area">
+          <input type="text" id="userInput" placeholder="Type your heart...">
+          <button class="btn-primary" id="sendMsgBtn">
+            <i class="fas fa-paper-plane"></i>
+            Send
+          </button>
+        </div>
+        
+        <div class="chat-note">
+          <i class="fas fa-shield-heart"></i>
+          warm, non-judgmental — like a big sister
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN CARDS -->
+      <div class="right-column">
+        
+        <!-- PERIOD TRACKER CARD -->
+        <div class="card tracker-card">
+          <h2>
+            <i class="fas fa-calendar-heart"></i>
+            period tracker
+          </h2>
+          
+          <div class="tracker-form">
+            <div class="input-group">
+              <label>
+                <i class="fas fa-calendar-day"></i>
+                last period start
+              </label>
+              <input type="date" id="lastPeriodDate">
+            </div>
+            
+            <div class="input-group">
+              <label>
+                <i class="fas fa-chart-line"></i>
+                average cycle length (days)
+              </label>
+              <input type="number" id="cycleLength" placeholder="e.g. 28" min="20" max="45" value="28">
+            </div>
+            
+            <div class="button-group">
+              <button class="btn-primary" id="savePeriodBtn">
+                <i class="fas fa-save"></i>
+                Save & Calculate
+              </button>
+              <button class="btn-secondary" id="clearPeriodBtn">
+                <i class="fas fa-undo"></i>
+                Clear
+              </button>
+            </div>
+          </div>
+          
+          <div class="next-period-box" id="nextPeriodDisplay">
+            <i class="fas fa-sparkles"></i>
+            enter your dates, and i'll help you track, lovely
+          </div>
+        </div>
+
+        <!-- HEALTH NOTES CARD -->
+        <div class="card health-card">
+          <h2>
+            <i class="fas fa-book-heart"></i>
+            health notes
+          </h2>
+          
+          <textarea id="healthNoteInput" rows="3" placeholder="write body notes, feelings, symptoms..."></textarea>
+          
+          <div class="button-group">
+            <button class="btn-primary" id="saveNoteBtn">
+              <i class="fas fa-save"></i>
+              Save Note
+            </button>
+            <button class="btn-secondary" id="loadNoteBtn">
+              <i class="fas fa-folder-open"></i>
+              Load Last
+            </button>
+          </div>
+          
+          <div class="saved-notes" id="savedNoteDisplay">
+            <i class="fas fa-star"></i>
+            no notes yet, sweet one
+          </div>
+        </div>
+
+        <!-- MOOD + AFFIRMATION CARD -->
+        <div class="card mood-card">
+          <h2>
+            <i class="fas fa-smile"></i>
+            mood mirror
+          </h2>
+          
+          <div class="mood-buttons">
+            <button class="mood-btn" data-mood="happy">
+              <i class="fas fa-smile-beam"></i>
+              Happy
+            </button>
+            <button class="mood-btn" data-mood="sad">
+              <i class="fas fa-frown"></i>
+              Sad
+            </button>
+            <button class="mood-btn" data-mood="angry">
+              <i class="fas fa-angry"></i>
+              Angry
+            </button>
+            <button class="mood-btn" data-mood="stressed">
+              <i class="fas fa-tired"></i>
+              Stressed
+            </button>
+          </div>
+          
+          <div class="mood-message" id="moodMessage">
+            <i class="fas fa-heart" style="color: #FF9EB5;"></i>
+            click a mood — i'll respond
+          </div>
+
+          <h2 style="margin-top: 25px;">
+            <i class="fas fa-sparkles"></i>
+            daily affirmation
+          </h2>
+          
+          <div class="affirmation-box" id="affirmationDisplay">
+            you are enough, exactly as you are
+          </div>
+          
+          <button class="btn-secondary" id="newAffirmationBtn">
+            <i class="fas fa-sync-alt"></i>
+            new affirmation
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- HELPLINE FOOTER -->
+    <footer class="helpline-footer">
+      <div class="helpline-title">
+        <i class="fas fa-heart"></i>
+        you're never alone — help is available 24/7
+        <i class="fas fa-heart"></i>
+      </div>
+      
+      <div class="helpline-numbers">
+        <div class="helpline-item">
+          <i class="fas fa-phone-alt"></i>
+          <strong>988</strong> Suicide & Crisis Lifeline
+        </div>
+        <div class="helpline-item">
+          <i class="fas fa-comment-dots"></i>
+          <strong>HOME to 741741</strong> Crisis Text Line
+        </div>
+        <div class="helpline-item">
+          <i class="fas fa-ambulance"></i>
+          <strong>911</strong> Emergency
+        </div>
+      </div>
+      
+      <div class="disclaimer">
+        ⚕️ This app provides emotional support and tracking estimates only. Not medical advice.
+      </div>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
